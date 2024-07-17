@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.BoardMapper">
+
+
+
+    <!-- select 결과를 받을 객체 -->
+    <resultMap id="resultMapObj" type="com.test.domain.Board"></resultMap>
+
+    <select id="selectBoardAll" resultType="com.test.domain.Board">
+        select * from board order by bno desc;
+    </select>
+
+    <select id="selectBnoBoard" parameterType="int" resultType="com.test.domain.Board">
+        select bno, title, writer, content from board where bno=#{bno};
+    </select>
+
+    <delete id="boardDelete">
+        DELETE FROM board WHERE bno = #{bno} and writer = #{writer};
+    </delete>
+
+    <insert id="boardInsert">
+        INSERT INTO board (title, writer, content,view_cnt, comment_cnt,reg_date)
+        VALUES (#{title},#{writer}, #{content},0,0,now());
+    </insert>
+
+    <update id="boardUpdate" parameterType="Board">
+        UPDATE board
+        SET   title = #{title}, content = #{content}
+        WHERE bno = #{bno}
+    </update>
+
+    <select id="selectPage" parameterType="map" resultType="Board">
+        SELECT bno, title, content, writer, view_cnt, comment_cnt, reg_date
+        FROM board
+        ORDER BY reg_date DESC, bno DESC
+            LIMIT #{offset}, #{pageSize}
+    </select>
+
+
+    <sql id="searchCondition">
+        <choose>
+            <when test='option=="T"'>
+                AND title LIKE concat('%', #{keyword}, '%')
+            </when>
+            <when test='option=="W"'>
+                AND writer LIKE concat('%', #{keyword}, '%')
+            </when>
+            <otherwise>
+                AND (title   LIKE concat('%', #{keyword}, '%')
+                OR   content LIKE concat('%', #{keyword}, '%'))
+            </otherwise>
+        </choose>
+    </sql>
+
+    <select id="searchSelectPage" parameterType="SearchCondition" resultType="Board">
+        SELECT bno, title, content, writer, view_cnt, comment_cnt, reg_date
+        FROM  board
+        WHERE true
+        <include refid="searchCondition"/>
+        ORDER BY reg_date DESC, bno DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="searchResultCnt" parameterType="SearchCondition" resultType="int">
+        SELECT count(*)
+        FROM  board
+        WHERE true
+        <include refid="searchCondition"/>
+    </select>
+
+
+    <update id="updateCommentCnt" parameterType="map">
+        UPDATE board
+        SET   comment_cnt = comment_cnt + #{cnt}
+        WHERE bno = #{bno}
+    </update>
+
+
+
+
+<!--    ===============================테스트 코드 용=======================================-->
+
+<!--    개수 체크-->
+    <select id="count" resultType="int">
+        SELECT count(*) FROM board
+    </select>
+
+<!--    전체 삭제-->
+    <delete id="deleteAll">
+        DELETE FROM board
+    </delete>
+
+<!--    전체 선택-->
+    <select id="selectAll" resultType="Board">
+        SELECT bno, title, content, writer, view_cnt, comment_cnt, reg_date
+        FROM board
+        ORDER BY reg_date DESC, bno DESC
+    </select>
+
+
+
+
+
+
+
+
+
+</mapper>

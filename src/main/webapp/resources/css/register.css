@@ -1,0 +1,38 @@
+/* css 초기화 */
+* {margin: 0; padding: 0; border: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+.windowFrame {width: 50%; min-width: 600px; height: 80%; max-height: 650px;}
+.content_wrap {width: 70%; height: 80%;}
+
+.content {overflow-y: auto;}
+.content_wrap>input {width: 250px;}
+.content_wrap>label:first-of-type b,.content_wrap>input:first-of-type {top: 75px;}
+.content_wrap>label:nth-of-type(2) b,.content_wrap>input:nth-of-type(2) {top: 115px;}
+.content_wrap>label:nth-of-type(3) b,.content_wrap>input:nth-of-type(3) {top: 155px;}
+.content_wrap>label:nth-of-type(4) b,.content_wrap>input:nth-of-type(4) {top: 195px;}
+.content_wrap>label:nth-of-type(5) b {top: 235px;}
+.content_wrap>label:nth-of-type(6) b,.content_wrap>input:nth-of-type(5) {top: 275px;}
+.content_wrap>label:nth-of-type(7) b,.content_wrap>input:nth-of-type(6) {top: 315px;}
+.content_wrap>label:nth-of-type(8) b,.content_wrap>input:nth-of-type(7) {top: 355px;}
+
+.raidoWrapper {width: 250px; height: fit-content; position: absolute; right: 0; top: 235px; font-size: 20px; padding-left: 40px; box-sizing: border-box;}
+.raidoWrapper input {margin-left: 10px;}
+
+.content_wrap button {width:100px; padding: 7px 0;}
+.content_wrap button:first-of-type {right: 105px;}
+
+.content_wrap>input {width: 200px; height: 30px; border: 1px solid black; position: absolute; right: 0; text-indent: 5px; font-size: 18px; top: 50px;}
+.content_wrap>input:nth-of-type(2) {top: 90px;}
+
+/*.content_wrap input:nth-of-type(2) {top: 90px;}*/
+
+/* .remember input {} */
+
+.shadow {box-sizing: border-box; 
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid rgb(125, 125, 125);
+    border-bottom: 2px solid rgb(125, 125, 125);
+}

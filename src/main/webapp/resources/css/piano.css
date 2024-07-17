@@ -1,0 +1,50 @@
+/* css 초기화 */
+* {margin: 0; padding: 0; border: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+section {
+    position: relative; padding: 20px; box-sizing: border-box;}
+.keys {width: 60%; height: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.content {background-color: #84a6a6;}
+.pianoKey {color:rgba(0, 0, 0, 0); border-radius: 0 0 8px 8px;}
+.white {width: calc(100%/8); height: 100%; border: 1px solid black; border-right: 0; float: left; background-color: white; box-sizing: border-box;}
+.white:last-child {border-right: 1px solid black;}
+.black {width: calc(100%/11); height: 55%; background-color: black; position: absolute; top:0; transform: translate(-50%, 0); z-index: 10; border: 1px solid black; box-sizing: border-box;}
+.keys :nth-child(2) {left: 12.5%;}
+.keys :nth-child(4) {left: 25%;}
+.keys :nth-child(7) {left: 50%;}
+.keys :nth-child(9) {left: 62.5%;}
+.keys :nth-child(11) {left: 75%;}
+
+.songs {width: fit-content; height: 30px; background-color: white; border: 1px solid black; box-sizing: border-box; border-radius: 5px; position: absolute; padding: 20px; display: flex; align-items: center; justify-content: center; font-size: 20px;}
+.major {top:20px;}
+.minor {top:70px;}
+.seven {top:120px;}
+.sharp {bottom:120px;}
+.sus4 {bottom:70px;}
+.dim {bottom: 20px;}
+
+#doremi {left: 210px;}
+.C {left:120px;}
+.D {left:240px;}
+.E {left:360px;}
+.F {left:480px;}
+.G {left:600px;}
+.A {left:720px;}
+.B {left:840px;}
+
+.paint {animation: painting 0.75s ease-in-out;}
+@keyframes painting {
+0% {
+    filter: drop-shadow(0 0 10px gold);
+    background-color: gold;
+}
+50% {
+    filter: drop-shadow(0 0 20px gold);
+}
+100% {
+    filter: drop-shadow(0 0 0 gold);
+    background-color: none;
+}
+}

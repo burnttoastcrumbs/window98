@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.SpaoMapper">
+
+    <!-- select 결과를 받을 객체 -->
+    <resultMap id="resultMapObj" type="com.test.domain.Spao"></resultMap>
+
+    <select id="womanTap" resultType="com.test.domain.Spao">
+        select a.*, row_number() over (order by b.sales_qty desc) as rankk from item a, item_state b where a.num = b.num and a.type='여성용' limit 8;
+    </select>
+
+    <select id="manTap" resultType="com.test.domain.Spao">
+        select a.*, row_number() over (order by b.sales_qty desc) as rankk from item a, item_state b where a.num = b.num and a.type='남성용' limit 8;
+    </select>
+
+    <select id="uniTap" resultType="com.test.domain.Spao">
+        select a.*, row_number() over (order by b.sales_qty desc) as rankk from item a, item_state b where a.num = b.num and a.type='남녀공용' limit 8;
+    </select>
+</mapper>

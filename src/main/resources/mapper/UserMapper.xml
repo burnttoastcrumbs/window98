@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.dao.UserDao">
+
+
+
+    <!-- select 결과를 받을 객체 -->
+    <resultMap id="resultMapObj" type="com.test.domain.User"></resultMap>
+
+    <insert id="insertUser">
+        INSERT INTO user (id, pwd, name, gender, birthDate, phoneNumber, email, reg_date)
+        VALUES (#{id}, #{pwd}, #{name}, #{gender}, #{birthDate}, #{phoneNumber}, #{email}, NOW());
+    </insert>
+
+    <delete id="deleteUser">
+        delete from user where id=#{id};
+    </delete>
+
+<!--    <select id="selectUser">-->
+<!--        select * from user where id = #{id};-->
+<!--    </select>-->
+
+    <update id="updateUser">
+        update user set
+                        id=#{id},
+                        pwd=#{pwd},
+                        name=#{name},
+                        gender=#{gender},
+                        birthDate=#{birthDate},
+                        phoneNumber=#{phoneNumber},
+                        email=#{email},
+                        reg_Date=now()
+                    where id = #{id};
+    </update>
+
+    <select id="count">
+        select count(*) from user;
+    </select>
+
+    <delete id="deleteAll">
+        delete from user;
+    </delete>
+
+    <select id="findLogin" parameterType="map" resultType="com.test.domain.User">
+        SELECT * FROM user WHERE id = #{id} AND pwd = #{pwd}
+    </select>
+<!--    로그인 시 db용으로 쓸거임-->
+
+
+    <select id="welcomeName">
+        select name from user where id=#{id};
+    </select>
+
+</mapper>

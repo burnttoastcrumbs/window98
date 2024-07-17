@@ -1,0 +1,14 @@
+/* css 초기화 */
+* {margin: 0; padding: 0; border: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+#ulList li {margin: 10px 0}
+        #ulList li button {margin-left: 10px;}
+        #textValue {border: 1px solid black; width: 400px; height: 30px; text-indent: 10px;}
+        .content {display: flex; align-items: center; justify-content: center;
+                /*overflow-y: scroll;*/
+        }
+        .content_wrap {text-align: center;}
+        #buttonnnn {width: 50px; height: 33px; background-color:#c0c0c0; border: 1px solid black;}
+        h1 {font-size: 50px;}

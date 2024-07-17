@@ -1,0 +1,132 @@
+/* css 초기화 */
+* {margin: 0; padding: 0; border: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+body {background-color: black; font-family: "Noto Sans KR", sans-serif;}
+
+/* body {background-image: url(../img/omori.jpeg);} */
+.body_background {background-image: url(../img/omori.jpeg);}
+
+.section_wrap {width: 1200px; height: 100vh;
+    margin: auto; background-image: url(../img/background.png); background-size: cover; background-position: center;}
+nav {width: 150px; height: calc(100vh - 52px);
+    float: left;}
+nav ul {width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;}
+nav ul li {width: 120px; height: 120px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; position: relative;}
+.section_wrap nav ul li a img {width: 150px; position: absolute; top: -20px; left: -15px; }
+nav ul li span {position: absolute; bottom: 10px; color: white;}
+section {width: calc(100% - 150px); height: calc(100vh - 52px); float: left; position: relative;}
+section>img { width: 350px; position: absolute; right: 30px; top: 30px; z-index: 2;}
+.pretty {width: 200px; transform: translate(-50%,-50%);}
+.first {top:20%; left: 15%;}
+.second {top:30%; left: 30%;}
+.third {top: 80%; left: 47%;}
+.dog {width: 150px; position: absolute; left: 0; top: calc(100% - 80px);}
+.dog2 {width: 80px; position: absolute; right: 50px; top: calc(100% - 140px);}
+.balloon {width: fit-content; height: fit-content; position: absolute; left: 100px; top: calc(100% - 250px); background-color: #ffffcc;border: 1px solid black; box-sizing: border-box; border-radius: 15px; display: flex; justify-content: center; align-items: center; text-align: center; padding: 30px 50px; z-index: 2;}
+.balloon>button {position: absolute; right: 3px; top: 3px; background-color: #ffffcc; width: 23px; height: 23px; border: 1px solid black; box-sizing: border-box; border-radius: 50%;}
+.balloon::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffcc transparent transparent #ffffcc;
+}
+.blockBalloon{display: block;}
+.noneBalloon{display: none;}
+.one {width: 100px; height: 150px; position: absolute; background-color: #94beb8; top:150px; right: 200px;}
+.two {width: 100px; height: 120px; position: absolute; top: 100px; right: 45px; background-color: #5cc2b3;}
+footer {width: 100%; height: 52px; background-color :#c0c0c0; float: left; border-top: 2px solid white; box-sizing: border-box;}
+footer>div {height: 100%; float: left;}
+.index_wraper {width: 150px;}
+.index_wraper a {width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: black;}
+.index {width: 97%; height: 44px; box-sizing: border-box; border-right: 2px solid black; border-bottom: 2px solid black; border-top: 2px solid white; border-left: 2px solid white; position: relative; overflow: hidden;}
+.index img {position: absolute; top: -19px; left: -15px; width: 83px; height: 83px;}
+.index span {position: absolute; top:5px; right: 6px; font-size: 21px; font-weight: bold;}
+.bar {width: 18px; height: 100%; display: flex; justify-content: space-around; align-items: center;}
+.bar>div {width: 2px; height: 88%; background-color: rgb(125, 125, 125); float: left; border-right: rgb(240, 240, 240) solid 2px;}
+
+.bar>div:last-of-type {height: 70%;
+    border-top: rgb(240, 240, 240) solid 2px;
+    border-left: rgb(240, 240, 240) solid 2px;
+    background-color: rgb(180, 180, 180);
+    border-right: rgb(125, 125, 125) solid 2px;
+    border-bottom: rgb(125, 125, 125) solid 2px;
+}
+
+.ie {width: 100px;  position: relative;}
+.ie div {width: 50%; height: 100%; float: left;
+}
+.ie div a {width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden;}
+.ie div a img {width: 65px; height: 65px;}
+.opened_window_wraper {width: 734px; height: 100%; margin-left: 3px;}
+.opened_window_wraper ul {width: 100%; height: 100%;}
+.opened_window_wraper ul li {width: calc(100%/4); height: 100%;float: left;}
+.opened_window_wraper ul li a {width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: black;}
+.opened_window {width: 99%; height: 44px; box-sizing: border-box; border-right: 2px solid black; border-bottom: 2px solid black; border-top: 2px solid white; border-left: 2px solid white; position: relative;}
+.opened_window img {position: absolute; top: -10px; left: -12px; width: 60px; height: 60px;}
+.opened_window span {position: absolute; top:8px; left: 40px; font-size: 16px;}
+.chosen {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white; background-color: lightgray;}
+.clock_wrap {float: right;}
+.clock_container {width: 170px; height: 100%; display: flex; justify-content: center ; align-items: center;}
+.clock2 {width: 97%; height: 44px; box-sizing: border-box; border-left: 2px solid black; border-top: 2px solid black; border-bottom: 2px solid white; border-right: 2px solid white; position: relative; display: flex; justify-content: center;
+align-items: center;}
+.clock2 img {
+    position: absolute; top: -13px; left: -8px; width: 65px; height: 65px;}
+.clock2 p {position: absolute; top:5px; left: 50px; font-size: 20px; font-weight: normal;}
+.last_bar {float: right; width: 5px;}
+.last_bar div:last-of-type {display: none;}
+
+
+.modal_box {width: 600px; height: 500px; background-color: #d0d0d1; position: absolute; left: 50%; top:calc(50% - 27px); transform: translate(-50%,-50%);display: none; z-index: 10;}
+.modal_active {display: block !important;}
+
+.blueBar {width: 99%; height: 40px;
+    background: linear-gradient(to right,#12024d, #386ba1);
+     position: absolute; top: 5px; left: .5%;}
+.blueBar>span {color: white; position: absolute; top: 50%; left: 10px; transform: translate(0, -50%); font-size: 20px;}
+.blueBar>ul {width: 100px; height: 32px;position: absolute; right: 3px; top:4px; display: flex; justify-content: space-between;}
+.blueBar>ul li {width: 32px; height: 100%; background-color: #d0d0d1; display: flex; justify-content: center; align-items: center;
+}
+.blueBar>ul li a {color: black;}
+
+.shadow {box-sizing: border-box;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid rgb(125, 125, 125);
+    border-bottom: 2px solid rgb(125, 125, 125);
+}
+
+.content2 {width: 99%; height: calc(100% - 52px);
+    background-color: white;
+     position: absolute; left:0.5%; bottom: 5px;
+     box-sizing: border-box;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid rgb(125, 125, 125);
+    border-top: 2px solid rgb(125, 125, 125);
+
+}
+.content2_wrap {width: 70%; height: fit-content; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); background-color: rgba(255,0,0,0.3);}
+.content2_wrap p {font-size: 20px; margin-bottom: 5px;}
+.content2_wrap p:first-of-type{font-size: 30px; text-align: center; margin-bottom: 10px;}
+.content2_wrap p>span {float: right;}
+.bulb {position: absolute; top: 0; left: calc(75% + 300px);
+    transform: translate(-50%,0);
+}
+.white_lightbulb {width: 50px;}
+.black_lightbulb {width: 105px;}
+
+.none {display: none;}
+.block {display: block;}
+
+.modal>ul {width: fit-content;}

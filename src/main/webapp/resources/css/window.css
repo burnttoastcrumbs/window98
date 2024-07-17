@@ -1,0 +1,21 @@
+/* css 초기화 */
+* {margin: 0; padding: 0; border: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+.shadow {box-sizing: border-box; 
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid rgb(125, 125, 125);
+    border-bottom: 2px solid rgb(125, 125, 125);}
+
+section {background-color: #d0d0d1; position: relative;}
+.content {width: 99%; height: calc(100vh - 111px);
+    background-color: white;
+    position: absolute; left:0.5%; bottom: 5px;
+    box-sizing: border-box;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid rgb(125, 125, 125);
+    border-top: 2px solid rgb(125, 125, 125);
+}
