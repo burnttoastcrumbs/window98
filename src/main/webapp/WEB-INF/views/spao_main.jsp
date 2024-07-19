@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/main.css?after?after?after">
   <link rel="stylesheet" href="css/tab.css">
   <link rel="stylesheet" href="css/footer.css">
-  <script src="https://kit.fontawesome.com/f0e73cfa04.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <nav>
